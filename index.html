@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ট্রেন ও যাত্রী</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            -webkit-user-select: none;
+        }
+        body{
+            width: 100%;
+            height: max-content;
+            margin-bottom: 60px;
+            overflow-y: scroll;
+            background: rgb(26, 120, 182);
+        }
+        h2{
+            color: #fff;
+            text-align: center;
+            font-family:'Times New Roman', Times, serif;
+            font-weight: 200;
+        }
+        .flex{
+            display: flex;
+            margin-top: 20px;
+        }
+        .card{
+            width: 30%;
+            max-width: 35%;
+            min-width: 35%;
+            padding: 8px;
+            text-align: center;
+            max-height: 50px;
+            min-height: 50px;
+            background: #fff;
+            font-size: 13px;
+        }
+        .card-lg{
+            width: 92%;
+            max-width: 92%;
+            min-width: 92%;
+            padding: 8px;
+            text-align: center;
+            max-height: auto;
+            min-height: 50px;
+            background: #fff;
+            font-size: 13px;
+            margin-left: 4%;
+            margin-right: 4%;
+            overflow-x: scroll;
+        }
+        .left{
+            margin-left: 8%;
+            margin-right: 16%;
+        }
+        .right{
+            margin-right: 8%;
+        }
+        .card .text{
+            display: flex;
+        }
+        .footer{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+        }
+        .footer button{
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            background: #fff;
+            max-height: 60px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            min-height: 45px;
+            border: 1px solid #ccc;
+        }
+        .footer button:hover, .footer button:focus{
+            background: rgb(26, 120, 182);
+            border: 1px solid #fff;
+            color: #fff;
+        }
+        input, select{
+            width: 100%;
+            outline: 0;
+            padding: 10px;
+            border-radius: 30px;
+            border: 1px solid #ccc;
+        }
+        .btn{
+            width: 100%;
+            border-radius: 30px;
+            padding: 10px;
+            border: 1px solid rgb(26, 120, 182);
+            background: transparent;
+            margin-top: 8px;
+        }
+        .btn:hover, .btn:focus{
+            background: rgb(26, 120, 182);
+            color: #fff;
+        }
+        .green{
+            color: rgb(3, 99, 11);
+        }
+        .red {
+            color: #920303;
+        }
+        span {
+            margin-left: 4px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <h2>ট্রেন ও যাত্রী</h2>
+    <br>
+    <div class="box" id="wizard">
+        <div class="flex">
+            <div class="card left">
+                <div class="text">স্টেশন লিস্ট</div>
+            </div>
+            <div class="card right">
+                <div class="text" onclick="showTrainList()">ট্রেন লিস্ট</div>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="card left">
+                <div class="text">টিকিট কিনুন</div>
+            </div>
+            <div class="card right">
+                <div class="text">ট্রেন ট্র্যাক করুন</div>
+            </div>
+        </div>
+    </div>
+    <div class="pl" id="pl" include-html=""></div>
+    <div id="pl-c"></div>
+    <div class="footer">
+        <button>হোম</button>
+        <button>সেটিংস</button>
+        <button style="font-size: 13px;padding: 2px;">আমাদের সম্পর্কে</button>
+    </div>
+    <script src="./script.js"></script>
+    <script src="./trainList.js"></script>
+</body>
+</html>
