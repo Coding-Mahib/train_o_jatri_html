@@ -109,15 +109,15 @@ function showDescription(){
                 }
                 html += '</div><br />'
                 for (let i = 0; i < routes.length; i++){
-                    html += '<div class="flex" style="display: block">';
-                    html += '<span style="text-align: left;">City: </span><h3 style="text-align: left;">' + routes[i].city + '</h3>';
+                    html += '<hr /><div class="flex" style="display: block">';
+                    html += '<span style="text-align: left;">City: <h3 style="text-align: left;">' + routes[i].city + '</h3></span>';
                     html += '<br />';
                     html += '<p>Duration: ' + routes[i].duration + '</p>';
                     html += '<br />';
                     html += '<p>Arrival Time: ' + routes[i].arrival_time + '</p>';
                     html += '<br />';
                     html += '<p>Departure Time: ' + routes[i].departure_time + '</p>';
-                    html += '</div>';
+                    html += '</div><hr />';
                 }                
                 html += '</div>';
                 pl_c.innerHTML = html;
