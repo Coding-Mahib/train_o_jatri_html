@@ -116,11 +116,38 @@
             margin-left: 4px;
             font-size: 16px;
         }
+        #loader{
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            text-align: center;
+            margin-left: 34%;
+            margin-right: auto;
+            top: 30%;
+            height: 120px;
+            position: absolute;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loader-place{
+            position: absolute;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background: transparent;
+            top: 0;
+        }
     </style>
 </head>
 <body>
     <br>
     <br>
+    <div class="loader-place"><div id="loader"></div></div>
     <h2>ট্রেন ও যাত্রী</h2>
     <br>
     <div class="box" id="wizard">
@@ -144,7 +171,7 @@
     <div class="pl" id="pl" include-html=""></div>
     <div id="pl-c"></div>
     <div class="footer">
-        <button>হোম</button>
+        <button onclick="returnHome()">হোম</button>
         <button>সেটিংস</button>
         <button style="font-size: 13px;padding: 2px;">আমাদের সম্পর্কে</button>
     </div>

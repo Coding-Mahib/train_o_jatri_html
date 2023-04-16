@@ -2,12 +2,14 @@ function showTrainList(){
     wizard.style.display = 'none';
     var html, input, trains,json;
     
-
+    loader.style.display = 'block';
     // Get Trains
     let xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function(){
         if (this.readyState === 4 && this.status === 200){
+            
+            loader.style.display = 'none';
             let response = this.responseText;
             json = JSON.parse(response);
             //json = Object.values(json['data']);
@@ -38,10 +40,12 @@ function showDescription(){
     let select = document.querySelector('#trSelect');
     let option = select.options[select.selectedIndex].text;
     let html = '';
+    loader.style.display = 'block';
     
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
         if (this.readyState === 4 && this.status === 200){
+            loader.style.display = 'none';
             let response = this.responseText;
             let json = JSON.parse(response);
             let data = json['data'];
@@ -109,15 +113,15 @@ function showDescription(){
                 }
                 html += '</div><br />'
                 for (let i = 0; i < routes.length; i++){
-                    html += '<hr /><div class="flex" style="display: block">';
-                    html += '<span style="text-align: left;">City: <h3 style="text-align: left;">' + routes[i].city + '</h3></span>';
+                    html += '<div class="flex" style="display: block">';
+                    html += '<span style="text-align: left;">City: </span><h3 style="text-align: left;">' + routes[i].city + '</h3>';
                     html += '<br />';
                     html += '<p>Duration: ' + routes[i].duration + '</p>';
                     html += '<br />';
                     html += '<p>Arrival Time: ' + routes[i].arrival_time + '</p>';
                     html += '<br />';
                     html += '<p>Departure Time: ' + routes[i].departure_time + '</p>';
-                    html += '</div><hr />';
+                    html += '</div>';
                 }                
                 html += '</div>';
                 pl_c.innerHTML = html;
