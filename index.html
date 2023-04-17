@@ -37,10 +37,11 @@
             min-width: 35%;
             padding: 8px;
             text-align: center;
-            max-height: 50px;
-            min-height: 50px;
+            max-height: 90px;
+            min-height: 90px;
             background: #fff;
             font-size: 13px;
+            text-align: center;
         }
         .card-lg{
             width: 92%;
@@ -49,7 +50,7 @@
             padding: 8px;
             text-align: center;
             max-height: auto;
-            min-height: 50px;
+            min-height: 70px;
             background: #fff;
             font-size: 13px;
             margin-left: 4%;
@@ -64,7 +65,10 @@
             margin-right: 8%;
         }
         .card .text{
-            display: flex;
+            display: block;
+        }
+        .text img{
+            width: 50px;
         }
         .footer{
             position: fixed;
@@ -118,7 +122,7 @@
         }
         #loader{
             border: 16px solid #f3f3f3;
-            border-top: 16px solid #3498db;
+            border-top: 16px solid #05FF00;
             border-radius: 50%;
             width: 120px;
             text-align: center;
@@ -142,6 +146,20 @@
             background: transparent;
             top: 0;
         }
+        #connStatus{
+            display: none;
+            position: fixed;
+            width: 100%;
+            padding: 4px;
+            color: #fff;
+            bottom: 0;
+            background: #111;
+            text-align: center;
+        }
+        iframe{
+            height: 100%;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -153,21 +171,22 @@
     <div class="box" id="wizard">
         <div class="flex">
             <div class="card left">
-                <div class="text">স্টেশন লিস্ট</div>
+                <div class="text" onclick="showStations()">স্টেশন লিস্ট</div>
             </div>
             <div class="card right">
-                <div class="text" onclick="showTrainList()">ট্রেন লিস্ট</div>
+                <div class="text" onclick="showTrainList()"><img src="./train.svg" /><br />ট্রেন লিস্ট</div>
             </div>
         </div>
         <div class="flex">
             <div class="card left">
-                <div class="text">টিকিট কিনুন</div>
+                <div class="text" onclick="buyTicket()">টিকিট কিনুন</div>
             </div>
             <div class="card right">
                 <div class="text">ট্রেন ট্র্যাক করুন</div>
             </div>
         </div>
     </div>
+    
     <div class="pl" id="pl" include-html=""></div>
     <div id="pl-c"></div>
     <div class="footer">
@@ -175,7 +194,9 @@
         <button>সেটিংস</button>
         <button style="font-size: 13px;padding: 2px;">আমাদের সম্পর্কে</button>
     </div>
+    <div id="connStatus">No Connection</div>
     <script src="./script.js"></script>
     <script src="./trainList.js"></script>
+    <script src="./buyTicket.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
